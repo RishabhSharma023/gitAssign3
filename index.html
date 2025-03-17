@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Calculator</title>
+</head>
+<body>
+    <div class = title>
+        <h1>Case Calculator</h1>
+    </div>
+
+    <div class = herons-formula>
+        <h2>Herons Formula</h2>
+        <form action="herons_formula.php" method="post">
+            <label for="side1-heron">Side 1:</label>
+            <input type="number" name = "side1-heron" id="side1-heron" required>
+            <br>
+            <label for="side2-heron">Side 2:</label>
+            <input type="number" name = "side2-heron" id="side2-heron" required>
+            <br>
+            <label for="side3-heron">Side 3:</label>
+            <input type="number" name = "side3-heron" id="side3-heron" required>
+            <br>
+            <input type="submit" value="Calculate">
+            <label>Area (Result) : </label>
+            <input type="text" name="resultHeron" id="resultHeron" readonly>
+        </form>
+    </div>
+
+    <div class = ambiguous-case>
+        <h2>Ambiguous Case</h2>
+        <form action="ambiguous_case.php" method="post">
+            <label for="side1-ambiguous">Side 1:</label>
+            <input type="number" name = "side1-ambiguous" id="side1-ambiguous" required>
+            <br>
+            <label for="side2-ambiguous">Side 2:</label>
+            <input type="number" name = "side2-ambiguous" id="side2-ambiguous" required>
+            <br>
+            <label for="angle-ambiguous">Angle:</label>
+            <input type="number" name = "angle-ambiguous" id="angle-ambiguous" required>
+            <br>
+            <input type="submit" value="Calculate">
+            <label>Triangle Type (Result): </label>
+            <input type="text" name="resultAmbiguous" id="resultAmbiguous" readonly>
+        </form>
+    </div>
+
+    <div class = newtons-formula>
+        <h2>Newtons Formula</h2>
+        <form action="newtons_formula.php" method="post">
+            <label for="side1-newton">Side 1:</label>
+            <input type="number" name = "side1-newton" id="side1-newton" required>
+            <br>
+            <label for="side2-newton">Side 2:</label>
+            <input type="number" name = "side2-newton" id="side2-newton" required>
+            <br>
+            <label for="angle-newton">Angle:</label>
+            <input type="number" name = "angle-newton" id="angle-newton" required>
+            <br>
+            <input type="submit" value="Calculate">
+            <label>Root Approximation (Result): </label>
+            <input type="text" name="resultNewton" id="resultNewton" readonly>
+        </form>
+    </div>
+
+    <div class = polynomial-functions>
+        <h2>Polynomial Functions</h2>
+        <form action="polynomial_functions.php" method="post">
+            <label for="a">Coefficients:</label>
+            <input type="number" name = "coefficients" id="coefficients" required>
+            <br>
+            <label for="b">b:</label>
+            <input type="number" name = "b" id="b" required>
+            <br>
+            <label for="c">c:</label>
+            <input type="number" name = "c" id="c" required>
+            <br>
+            <input type="submit" value="Calculate">
+            <label>Polynomial Function (Result): </label>
+            <input type="text" name="resultPolynomial" id="resultPolynomial" readonly>
+            <label>Polynomial Evaluation (Result): </label>
+            <input type="text" name="resultPolynomialEval" id="resultPolynomialEval" readonly>
+        </form>
+    </div>
+</body>
+</html>
