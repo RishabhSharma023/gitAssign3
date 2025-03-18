@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: auto auto; 
+    column-gap: 0px; 
+    row-gap: 10px; 
+    justify-items: center;
+    align-items: start; 
+    padding: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #444;
+}
+
+form {
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="number"],
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+div.title {
+    background-color: #007bff;
+    color: white;
+    padding: 20px 0;
+    margin-bottom: 20px;
+    grid-column: 1 / -1; /* Span across all columns */
+    width: 100%;
+    text-align: center;
+}
+
+div.title h1 {
+    margin: 0;
+}
+
+div.herons-formula,
+div.ambiguous-case,
+div.newtons-formula,
+div.polynomial-functions {
+    width: 90%; /* Adjust width to fit nicely */
+    max-width: 400px;
+}
+
+input[readonly] {
+    background-color: #e9ecef;
+    color: #495057;
+    cursor: not-allowed;
+}

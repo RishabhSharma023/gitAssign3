@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Case Calculator</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class = title>
@@ -23,7 +24,8 @@
             <input type="number" name = "side3-heron" id="side3-heron" required>
             <br>
             <input type="submit" value="Calculate">
-            <label>Area (Result) : </label>
+            <br>
+            <label>Area  :   </label>
             <input type="text" name="resultHeron" id="resultHeron" readonly>
         </form>
     </div>
@@ -41,6 +43,7 @@
             <input type="number" name = "angle-ambiguous" id="angle-ambiguous" required>
             <br>
             <input type="submit" value="Calculate">
+            <br>
             <label>Triangle Type (Result): </label>
             <input type="text" name="resultAmbiguous" id="resultAmbiguous" readonly>
         </form>
@@ -49,18 +52,13 @@
     <div class = newtons-formula>
         <h2>Newtons Formula</h2>
         <form action="newtons_formula.php" method="post">
-            <label for="side1-newton">Side 1:</label>
-            <input type="number" name = "side1-newton" id="side1-newton" required>
-            <br>
-            <label for="side2-newton">Side 2:</label>
-            <input type="number" name = "side2-newton" id="side2-newton" required>
-            <br>
-            <label for="angle-newton">Angle:</label>
-            <input type="number" name = "angle-newton" id="angle-newton" required>
+            <label for="root-guess">Root Guess:</label>
+            <input type="number" name = "root-guess" id="root-guess" required>
             <br>
             <input type="submit" value="Calculate">
+            <br>
             <label>Root Approximation (Result): </label>
-            <input type="text" name="resultNewton" id="resultNewton" readonly>
+            <input type="text" name="resultRoot" id="resultRoot" readonly>
         </form>
     </div>
 
@@ -70,15 +68,17 @@
             <label for="a">Coefficients:</label>
             <input type="number" name = "coefficients" id="coefficients" required>
             <br>
-            <label for="b">b:</label>
-            <input type="number" name = "b" id="b" required>
+            <label for="exponents">Exponents:</label>
+            <input type="number" name = "exponents" id="exponents" required>
             <br>
-            <label for="c">c:</label>
-            <input type="number" name = "c" id="c" required>
+            <label for="c">x Value:</label>
+            <input type="number" name = "x-value" id="x-value" required>
             <br>
             <input type="submit" value="Calculate">
+            <br>
             <label>Polynomial Function (Result): </label>
             <input type="text" name="resultPolynomial" id="resultPolynomial" readonly>
+            <br>
             <label>Polynomial Evaluation (Result): </label>
             <input type="text" name="resultPolynomialEval" id="resultPolynomialEval" readonly>
         </form>
