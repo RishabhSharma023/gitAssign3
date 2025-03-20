@@ -11,28 +11,28 @@
         <h1>Case Calculator</h1>
     </div>
 
-    <div class = herons-formula>
+    <div class="herons-formula">
         <h2>Herons Formula</h2>
-        <form action="herons_formula.php" id = "heron" method="post">
-            <label for="side1-heron">Side 1:</label>
-            <input type="number" name = "side1-heron" id="side1-heron" required>
+        <form id="heron">
+            <label for="sideA-heron">Side A:</label>
+            <input type="number" name="sideA-heron" id="sideA-heron" step=0.001 required>
             <br>
-            <label for="side2-heron">Side 2:</label>
-            <input type="number" name = "side2-heron" id="side2-heron" required>
+            <label for="sideB-heron">Side B:</label>
+            <input type="number" name="sideB-heron" id="sideB-heron" step=0.001 required>
             <br>
-            <label for="side3-heron">Side 3:</label>
-            <input type="number" name = "side3-heron" id="side3-heron" required>
+            <label for="sideC-heron">Side C:</label>
+            <input type="number" name="sideC-heron" id="sideC-heron" step=0.001 required>
             <br>
             <input type="submit" value="Calculate">
             <br>
-            <label>Area  :   </label>
+            <label>Area:</label>
             <input type="text" name="resultHeron" id="resultHeron" readonly>
         </form>
     </div>
 
     <div class = ambiguous-case>
         <h2>Ambiguous Case</h2>
-        <form action="ambiguous_case.php" method="post">
+        <form action="ambiguous_case.php" id = "ambig" method="post">
             <label for="side1-ambiguous">Side 1:</label>
             <input type="number" name = "side1-ambiguous" id="side1-ambiguous" required>
             <br>
@@ -83,5 +83,7 @@
             <input type="text" name="resultPolynomialEval" id="resultPolynomialEval" readonly>
         </form>
     </div>
+
+    <script src="jscript.js"></script>
 </body>
 </html>
