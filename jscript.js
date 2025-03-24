@@ -84,15 +84,15 @@ document.getElementById('newton').addEventListener('submit', function(event){
 );
 
 const polynomialEvaluation = (coefficients, exponents, xvalue) => {
-    var result = 0;
-    for (var i = 0; i < coefficients.length; i++) {
+    let result = 0;
+    for (let i = 0; i < coefficients.length; i++) {
         result += parseFloat(coefficients[i]) * Math.pow(xvalue, parseFloat(exponents[i]));
     }
     return result;
 }
 
 const polynomialFunction = (coefficients, exponents) => {
-    var result = '';
+    let result = '';
     for (let i = 0; i < coefficients.length; i++) {
         if (i==0){
             result += coefficients[i] + 'x^' + exponents[i];
