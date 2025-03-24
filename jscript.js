@@ -9,6 +9,11 @@ document.getElementById("heron").addEventListener("submit", function(event) {
     const b = parseFloat(document.getElementById("side2-heron").value);
     const c = parseFloat(document.getElementById("side3-heron").value);
 
+    if (a <= 0 || b <= 0 || c <= 0) {
+        alert("All sides must be positive.");
+        return;
+    }
+
     document.getElementById("resultHeron").value = heronsFormula(a, b, c).toFixed(2);
 });
 
@@ -17,7 +22,7 @@ const ambiguousCase = (sAambig, sBambig, a) => {
         return 'Right triangle';
     }
 
-    const height = sBambig * Math.sin(a * (Math.PI / 180));
+    const height = Math.round(sBambig * Math.sin(a * (Math.PI / 180)));
 
     if (a < 90) {
         if (sAambig < height) {
@@ -78,11 +83,23 @@ document.getElementById('newton').addEventListener('submit', function(event){
 }
 );
 
-const polynomialFunc = (coefficients, exponents) => {
-    const result = '';
+const polynomialEvaluation = (coefficients, exponents, xvalue) => {
+    var result = 0;
+    for (var i = 0; i < coefficients.length; i++) {
+        result += parseFloat(coefficients[i]) * Math.pow(xvalue, parseFloat(exponents[i]));
+    }
+    return result;
+}
+
+const polynomialFunction = (coefficients, exponents) => {
+    var result = '';
     for (let i = 0; i < coefficients.length; i++) {
         if (i==0){
             result += coefficients[i] + 'x^' + exponents[i];
+        }
+
+        else if(coefficients[i] < 0){
+            result += ' - ' + Math.abs(coefficients[i]) + 'x^' + exponents[i];
         }
         else {
             result += ' + ' + coefficients[i] + 'x^' + exponents[i];
