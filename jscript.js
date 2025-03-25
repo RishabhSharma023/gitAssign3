@@ -2,8 +2,8 @@ const heronsFormula = (a, b, c) => {
     return Math.sqrt((4 * a * a * b * b) - Math.pow(a * a + b * b - c * c, 2)) / 4
 }
 
-document.getElementById("heron").addEventListener("submit", function(event) {
-    event.preventDefault(); 
+document.getElementById("heron").addEventListener("submit", function (event) {
+    event.preventDefault();
 
     const a = parseFloat(document.getElementById("side1-heron").value);
     const b = parseFloat(document.getElementById("side2-heron").value);
@@ -59,24 +59,24 @@ document.getElementById('ambig').addEventListener('submit', function (event) {
 );
 
 const newtonsMethod = (g) => {
-    function f(x){
-        return 6*Math.pow(x,4) - 13*Math.pow(x,3) - 18*Math.pow(x,2) + 7*x + 6;
+    function f(x) {
+        return 6 * Math.pow(x, 4) - 13 * Math.pow(x, 3) - 18 * Math.pow(x, 2) + 7 * x + 6;
     }
 
-    function fPrime(x){
-        return 24*Math.pow(x,3) - 39*Math.pow(x,2) - 36*x + 7;
+    function fPrime(x) {
+        return 24 * Math.pow(x, 3) - 39 * Math.pow(x, 2) - 36 * x + 7;
     }
 
-    let iterationsMax=1000;
+    let iterationsMax = 1000;
     let iteration = 0;
-    while (Math.abs(f(g)) > 0.0001 && iteration < iterationsMax){
-        g = g - f(g)/fPrime(g);
+    while (Math.abs(f(g)) > 0.0001 && iteration < iterationsMax) {
+        g = g - f(g) / fPrime(g);
         iteration++;
     }
     return g;
 }
 
-document.getElementById('newton').addEventListener('submit', function(event){
+document.getElementById('newton').addEventListener('submit', function (event) {
     event.preventDefault();
     const g = parseFloat(document.getElementById('root-guess').value);
     document.getElementById('resultRoot').value = newtonsMethod(g);
@@ -94,11 +94,11 @@ const polynomialEvaluation = (coefficients, exponents, xvalue) => {
 const polynomialFunction = (coefficients, exponents) => {
     let result = '';
     for (let i = 0; i < coefficients.length; i++) {
-        if (i==0){
+        if (i == 0) {
             result += coefficients[i] + 'x^' + exponents[i];
         }
 
-        else if(coefficients[i] < 0){
+        else if (coefficients[i] < 0) {
             result += ' - ' + Math.abs(coefficients[i]) + 'x^' + exponents[i];
         }
         else {
