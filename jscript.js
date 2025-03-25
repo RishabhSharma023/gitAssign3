@@ -69,10 +69,12 @@ const newtonsMethod = (g) => {
 
     let iterationsMax = 1000;
     let iteration = 0;
+
     while (Math.abs(f(g)) > 0.0001 && iteration < iterationsMax) {
         g = g - f(g) / fPrime(g);
         iteration++;
     }
+    
     return g;
 }
 
@@ -85,6 +87,7 @@ document.getElementById('newton').addEventListener('submit', function (event) {
 
 const polynomialEvaluation = (coefficients, exponents, xvalue) => {
     let result = 0;
+
     for (let i = 0; i < coefficients.length; i++) {
         result += parseFloat(coefficients[i]) * Math.pow(xvalue, parseFloat(exponents[i]));
     }
@@ -93,15 +96,13 @@ const polynomialEvaluation = (coefficients, exponents, xvalue) => {
 
 const polynomialFunction = (coefficients, exponents) => {
     let result = '';
+
     for (let i = 0; i < coefficients.length; i++) {
         if (i == 0) {
             result += coefficients[i] + 'x^' + exponents[i];
-        }
-
-        else if (coefficients[i] < 0) {
+        } else if (coefficients[i] < 0) {
             result += ' - ' + Math.abs(coefficients[i]) + 'x^' + exponents[i];
-        }
-        else {
+        } else {
             result += ' + ' + coefficients[i] + 'x^' + exponents[i];
         }
     }
